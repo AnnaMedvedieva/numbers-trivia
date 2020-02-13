@@ -1,7 +1,5 @@
 package org.company.annamedvedieva.numberstrivia
 
-import android.content.Context
-import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -16,6 +14,7 @@ import org.company.annamedvedieva.numberstrivia.databinding.FragmentGameBinding
 class GameFragment : Fragment() {
 
     data class Question(
+        val image: Int,
         val text: String,
         val answers: List<String>)
 
@@ -23,22 +22,25 @@ class GameFragment : Fragment() {
     // All questions must have four answers.  We'd want these to contain references to string
     // resources so we could internationalize. (or better yet, not define the questions in code...)
     private val questions: MutableList<Question> = mutableListOf(
-        Question(text = "1+1",
+        Question(image = R.drawable.number2, text = "How many lions do you see?",
             answers = listOf("2", "3", "4", "5")),
-        Question(text = "1+2",
+        Question(image = R.drawable.number3, text = "How many camels do you see?",
             answers = listOf("3", "2", "4", "5")),
-        Question(text = "2+2",
+        Question(image = R.drawable.number4, text = "How many elephants are on the picture?",
             answers = listOf("4", "3", "5", "6")),
-        Question(text = "2+3",
+        Question(image = R.drawable.number5, text = "Count the leopards!",
             answers = listOf("5", "4", "6", "7")),
-        Question(text = "3+4",
-            answers = listOf("7", "4", "6", "8"))
+        Question(image = R.drawable.number6, text = "What is the number of zebras?",
+            answers = listOf("6", "5", "7", "8")),
+        Question(image = R.drawable.number9, text = "How many hippos are on the picture?",
+        answers = listOf("9", "10", "7", "8"))
     )
 
     lateinit var currentQuestion: Question
     lateinit var answers: MutableList<String>
+    var image: Int = R.drawable.ic_panorama_black_24dp
     private var questionIndex = 0
-    private val numQuestions = Math.min((questions.size + 1) / 2, 3)
+    private val numQuestions = questions.size
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -99,6 +101,7 @@ class GameFragment : Fragment() {
         currentQuestion = questions[questionIndex]
         // randomize the answers into a copy of the array
         answers = currentQuestion.answers.toMutableList()
+        image = currentQuestion.image
         // and shuffle them
         answers.shuffle()
         (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.title_trivia_question, questionIndex + 1, numQuestions)

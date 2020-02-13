@@ -1,0 +1,10 @@
+<resources>
+    <string name="submit_button">Submit</string>
+    <string name="try_again">Try again</string>
+    <string name="title_trivia_question">Numbers Trivia (%1$d/%2$d)</string>
+    <string name="you_won">You won!</string>
+    <string name="game_over">Game Over</string>
+    <string name="play_button">Play</string>
+    <string name="game_title">Numbers Trivia</string>
+    <string name="next_match">Next Match</string>
+</resources>

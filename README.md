@@ -8,3 +8,4 @@ The goal is to count the animals and choose a right answer from 4 options.
 ![start](https://github.com/AnnaMedvedieva/numbers-trivia/blob/master/screenshots/start_screen.png)
 ![elephants](https://github.com/AnnaMedvedieva/numbers-trivia/blob/master/screenshots/elephants.png)
 ![zebras](https://github.com/AnnaMedvedieva/numbers-trivia/blob/master/screenshots/zebras.png)
+![game over](https://github.com/AnnaMedvedieva/numbers-trivia/blob/master/screenshots/game_over.png)
